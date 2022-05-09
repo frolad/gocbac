@@ -36,7 +36,7 @@ func policiesSetter(
         switch access {
 		
         case AccessCanView:
-			if _, ok := contentPublic[Content]; ok {
+            if _, ok := contentPublic[Content]; ok {
                 return true
             } else if user, ok := contentOwners[Content]; ok {
                 return owner == User;
