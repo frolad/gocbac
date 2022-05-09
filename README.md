@@ -1,5 +1,5 @@
 # gocbac
-Simple Golang Content Based Access Control system based to Generics
+Simple Golang Content Based Access Control system based on generics
 
 **Go 1.18 or higher required**
 
