@@ -1,5 +1,7 @@
 # gocbac
-Simple Golang Content Based Access Control system
+Simple Golang Content Based Access Control system based to Generics
+
+**Go 1.18 or higher required**
 
 ## Description
 CBAC allows you to declare list of accesses and function which sets this accesses by content and instance of "USER"
