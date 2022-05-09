@@ -50,35 +50,35 @@ func policiesSetter(contentList []Content, user User, requestedAccesses []Access
 
 Once policiesSetter is ready you should be ready to init CBAC
 ``` go
-	cbac := gocbac.InitCBAC(
-		policiesSetter,
-		AccessCanView,
-		AccessCanEdit,
-		AccessCanDelete,
-	)
+cbac := gocbac.InitCBAC(
+	policiesSetter,
+	AccessCanView,
+	AccessCanEdit,
+	AccessCanDelete,
+)
 ```
 
 And use it by calling next this methods:
 
 #### Get the list of policies for the list of content and user
 ``` go
-    policies, err := cbac.GetPolicies([]Content{1, 2}, "foo@bar.com")
-    // or with limited accesses
-    policies, err := cbac.GetPolicies([]Content{1, 2}, "foo@bar.com", AccessCanView, AccessCanEdit)
+policies, err := cbac.GetPolicies([]Content{1, 2}, "foo@bar.com")
+// or with limited accesses
+policies, err := cbac.GetPolicies([]Content{1, 2}, "foo@bar.com", AccessCanView, AccessCanEdit)
 ```
 policies is the map of policies where key is the type of Content: `map[Content]Policy`
 
 #### Get policy for the content and user
 ``` go
-    policy, err := cbac.GetPolicy(1, "foo@bar.com")
-    // or with limited accesses
-    policy, err := cbac.GetPolicy(1, "foo@bar.com", AccessCanView, AccessCanEdit)
+policy, err := cbac.GetPolicy(1, "foo@bar.com")
+// or with limited accesses
+policy, err := cbac.GetPolicy(1, "foo@bar.com", AccessCanView, AccessCanEdit)
 ```
 policy is the map of booleans where key is the type of Access: `map[Access]bool`
 
 #### Get access for the content and user
 ``` go
-    access, err := cbac.GetAccess(1, "foo@bar.com", AccessCanView)
+access, err := cbac.GetAccess(1, "foo@bar.com", AccessCanView)
 ```
 access is boolean
 
